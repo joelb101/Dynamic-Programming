@@ -26,14 +26,7 @@ int max(int a,int b,int c){
 
 int longest_subsequence(int p[],int q[],int r[],int m,int n,int l){
 	int memtable[m+1][n+1][l+1];
-	/*	
-	for(int i=0;i<=l;i++)
-		memtable[0][0][i]=0;
-	for(int i=0;i<=n;i++)
-		memtable[0][i][0]=0;
-	for(int i=0;i<=m;i++)
-		memtable[i][0][0]=0;
-	*/
+
 	for(int i=0;i<=m;i++){
 		for(int j=0;j<=n;j++){
 			for(int k=0;k<=l;k++){
@@ -53,17 +46,7 @@ int longest_subsequence(int p[],int q[],int r[],int m,int n,int l){
 				}
 		}
 	}
-/*
-	for(int i=0;i<=m;i++){
-		for(int j=0;j<=n;j++){
-			for(int k=0;k<=l;k++){
-				printf("%d ",memtable[i][j][k]);;
-			}
-			printf("\n");
-		}
-		printf("\n");
-	}
-*/
+
 	return memtable[m][n][l];
 }
 
