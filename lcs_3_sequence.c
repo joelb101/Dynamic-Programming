@@ -39,8 +39,6 @@ int longest_subsequence(int p[],int q[],int r[],int m,int n,int l){
 		for(int j=1;j<=n;j++){
 			for(int k=1;k<=l;k++){
 				memtable[i][j][k]=max(memtable[i-1][j][k],memtable[i][j-1][k],memtable[i][j][k-1]);
-				//printf("%d,%d,%d\n",i,j,k);
-				//printf("%d == %d && %d == %d , %d\n",p[i-1],q[j-1],r[l-1],(p[i-1] == q[j-1] && q[j-1] == r[l-1]));
 				if(p[i-1] == q[j-1] && q[j-1] == r[k-1])
 					memtable[i][j][k]=memtable[i-1][j-1][k-1]+1;
 				}
